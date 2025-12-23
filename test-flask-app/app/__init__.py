@@ -2,6 +2,7 @@
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 from .config import Config
 
 db = SQLAlchemy()
@@ -9,6 +10,8 @@ db = SQLAlchemy()
 def create_app(): 
     app = Flask(__name__)
     app.config.from_object(Config)
+
+    CORS(app)
 
     # Add this to prevent 'MySQL server has gone away' errors
     app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
