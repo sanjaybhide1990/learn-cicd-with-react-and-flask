@@ -14,7 +14,7 @@ const FetchMessageById: React.FC = () => {
         setError(null);
         setResult(null);
 
-        fetch(`localhost:5000/getMessage/${id}`)
+        fetch(`http://127.0.0.1:5000/getMessage/${id}`)
         .then((res) => {
             if (!res.ok) throw new Error('Message not found');
             return res.json();

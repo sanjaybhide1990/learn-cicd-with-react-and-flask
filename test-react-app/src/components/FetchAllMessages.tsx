@@ -10,7 +10,8 @@ const FetchAllMessages: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch('localhost:5000/getAllMessages')
+        console.log('');
+        fetch('http://127.0.0.1:5000/getAllMessages')
         .then((res) => {
             if (!res.ok) throw new Error('Failed to fetch the messages');{
                 return res.json();
