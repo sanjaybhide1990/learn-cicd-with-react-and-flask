@@ -11,7 +11,7 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    CORS(app)
+    CORS(app, resources={r"/*": {"originis": "*"}})
 
     # Add this to prevent 'MySQL server has gone away' errors
     app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
