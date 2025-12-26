@@ -20,7 +20,7 @@ services:
     environment:
       - DB_USER=${MYSQL_USER}
       - DB_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - DB_HOST=${MYSQL_HOST}
+      - DB_HOST=db
       - DB_NAME=${MYSQL_DATABASE}
     depends_on: 
       - db
